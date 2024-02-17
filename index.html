@@ -6,12 +6,20 @@
     <link rel="stylesheet" href="styles.css">
     <title>Desafío</title>
     <script src="https://kit.fontawesome.com/eb9adcaff3.js" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </head>
 <body>
     <div class= "general-container">
-        <div class="search-bar"> 
+        <div class="search-bar">
             <button class="button-search"> <i class="fa-solid fa-magnifying-glass" style="color: #c1c1c1 !important;"></i> </button>
-            <div class="text-search"> Dark</div>
+            <div class="search">
+              <input type="text" class="text-search" placeholder="Buscar serie o película" oninput="searchResult()">
+              <div class="search-result">
+                <p> Dark</p>
+                <p> Dark</p>
+                <p> Dark</p>
+              </div>
+            </div>   
             <button class="button-search"><i class="fa-solid fa-x" style="color: #9a9a9a !important;"></i><i class="fa-solid fa-microphone"></i></button>
         </div>
         <div class= "title-section cellphone">

@@ -48,9 +48,35 @@ div{
 .text-search{
     display: flex;
     align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #c1c1c1;
+}
+
+.search{
     margin-left: 10px;
-    height: auto;
+    height: 90%;
     width: 80%;
+}
+
+.search-result{
+    background-color: #414141;
+    height: auto;
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    flex:1;
+    margin-top: 1%;
+    border-radius: 10px;
+}
+
+p{
+    font-family: Arial, Helvetica, sans-serif;
+    color: #c1c1c1;
+    margin-left: 15px;
 }
 
 .title-section{
