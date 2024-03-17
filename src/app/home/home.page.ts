@@ -9,4 +9,9 @@ export class HomePage {
 
   constructor() {}
 
+  title: string= "Mi nueva página";
+
+
+  nombreAlumno: string = '';
+
 }

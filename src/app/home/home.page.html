@@ -14,7 +14,9 @@
   </ion-header>
 
   <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+    <p> Ingrese el nombre del alumno:</p>
+    <ion-input [(ngModel)]="nombreAlumno"></ion-input>
+
+    <ion-label>El alumno se llama : <strong> {{nombreAlumno}}</strong></ion-label>
   </div>
 </ion-content>
