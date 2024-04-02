@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-lista-alumnos',
@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaAlumnosComponent  implements OnInit {
 
+  isActionSheetOpen = false;
+
   constructor() { }
 
   ngOnInit() {
@@ -14,4 +16,24 @@ export class ListaAlumnosComponent  implements OnInit {
 
   alumnos: any = ["Carlos", "Ximena", "Alberto", "Eduardo", "Barbara", "Georgina"];
 
+  public actionSheetOptions = [
+    {
+      text: 'Eliminar',
+      role: 'destructive',
+      data: {
+        action: 'delete',
+      },
+    },
+    {
+      text: 'Cancelar',
+      role: "cancel",
+      data: {
+        action: 'cancer',
+      },
+    },
+  ]
+
+  setOpen(isOpen: boolean){
+    this.isActionSheetOpen = isOpen;
+  }
 }

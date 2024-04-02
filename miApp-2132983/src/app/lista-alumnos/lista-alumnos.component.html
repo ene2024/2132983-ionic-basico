@@ -1,5 +1,15 @@
 <div>
   <ion-list>
-    <ion-item *ngFor = "let alumno of alumnos; let i = index"> Alumno {{i+1}}: {{alumno}} </ion-item>
+    <ion-item-sliding *ngFor = "let alumno of alumnos; let i = index"> 
+      <ion-item > Alumno {{i+1}}: {{alumno}} </ion-item>
+
+      <ion-item-options>
+        <ion-item-option> Favoritos </ion-item-option>
+        <ion-item-option (click) = "setOpen(true)" color = "danger"> Eliminar</ion-item-option>
+      </ion-item-options>
+    </ion-item-sliding>
+    
+
   </ion-list>
+  <ion-action-sheet (didDismiss) = "setOpen(false)" [isOpen] = "isActionSheetOpen" header=" Opciones" [buttons]="actionSheetOptions"> </ion-action-sheet>
 </div>
