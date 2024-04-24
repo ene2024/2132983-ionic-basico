@@ -1,4 +1,5 @@
 import {Component, OnInit } from '@angular/core';
+import { alumno } from '../alumno.model';
 
 @Component({
   selector: 'app-lista-alumnos',
@@ -14,7 +15,21 @@ export class ListaAlumnosComponent  implements OnInit {
   ngOnInit() {
   }
 
-  alumnos: any = ["Carlos", "Ximena", "Alberto", "Eduardo", "Barbara", "Georgina"];
+  alumnos: alumno[]=[]
+
+  alumno: alumno={
+    nombre:'',
+    presente: false,
+  }
+
+  agregarAlumno(){
+    this.alumnos.push(this.alumno);
+
+    this.alumno = {
+      nombre:'',
+      presente:false,
+    }
+  }
 
   public actionSheetOptions = [
     {
@@ -28,7 +43,7 @@ export class ListaAlumnosComponent  implements OnInit {
       text: 'Cancelar',
       role: "cancel",
       data: {
-        action: 'cancer',
+        action: 'cancel',
       },
     },
   ]

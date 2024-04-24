@@ -1,15 +1,35 @@
-<div>
+<form #templateForm="ngForm" (ngSubmit)="agregarAlumno()">
+  <ion-item>
+    <ion-label> Nombre del Alumno: </ion-label>
+    <ion-input required [(ngModel)]="alumno.nombre" name="nombre"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label> Presente </ion-label>
+    <ion-checkbox [(ngModel)]="alumno.presente" name="presente"> </ion-checkbox>
+  </ion-item>
+
+  <ion-button [disabled]="!templateForm.valid" type="submit"> Agregar </ion-button>
+</form>
+
+
   <ion-list>
-    <ion-item-sliding *ngFor = "let alumno of alumnos; let i = index"> 
-      <ion-item > Alumno {{i+1}}: {{alumno}} </ion-item>
+    <div *ngFor = "let alumno of alumnos; let i = index">
+    <ion-item-sliding > 
+      <ion-item > Alumno {{i+1}}: {{alumno.nombre}} </ion-item>
+      
 
       <ion-item-options>
         <ion-item-option> Favoritos </ion-item-option>
         <ion-item-option (click) = "setOpen(true)" color = "danger"> Eliminar</ion-item-option>
       </ion-item-options>
     </ion-item-sliding>
+
+    <ion-item *ngIf="alumno.presente"> Presente </ion-item>
+    <ion-item *ngIf="!alumno.presente"> No Presente </ion-item>
+    </div>
+
     
 
   </ion-list>
   <ion-action-sheet (didDismiss) = "setOpen(false)" [isOpen] = "isActionSheetOpen" header=" Opciones" [buttons]="actionSheetOptions"> </ion-action-sheet>
-</div>
+
