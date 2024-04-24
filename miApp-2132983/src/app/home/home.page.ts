@@ -11,14 +11,4 @@ export class HomePage {
 
   constructor(private consulta: ConsultaService) {}
 
-  productos: any[]=[];
-
-  obtenerProductos(): void{
-     this.consulta.getProductos().subscribe((resp: Object) =>
-    {
-      console.log(resp);
-      this.productos = resp as any[];
-    })
-  }
-
 }
