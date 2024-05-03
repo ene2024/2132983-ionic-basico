@@ -7,6 +7,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HomePage } from './home.page';
 import { ListaAlumnosComponent } from '../lista-alumnos/lista-alumnos.component';
 import { ProductsComponent } from '../products/products.component';
+import { CamaraComponent } from '../camara/camara.component';
 
 
 @NgModule({
@@ -17,6 +18,6 @@ import { ProductsComponent } from '../products/products.component';
     HomePageRoutingModule,
   ],
 
-  declarations: [HomePage, ListaAlumnosComponent,],
+  declarations: [HomePage, ListaAlumnosComponent, CamaraComponent],
 })
 export class HomePageModule {}
